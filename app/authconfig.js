@@ -19,8 +19,7 @@ export const authConfig = {
         if (isLoggedIn) return true;
         return false;
       } else if (isLoggedIn) {
-        const dashboardUrl = new URL("/dashboard", request.nextUrl);
-        return Response.redirect(dashboardUrl);
+        return "/dashboard"; 
       }
     
       return true;
