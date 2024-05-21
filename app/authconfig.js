@@ -1,10 +1,4 @@
-// import { getPageURL } from "./dashboard/users/add/page";
-
 import { redirect } from "next/navigation";
-
-// const url = await getPageURL();
-
-// console.log(url);
 
 export const authConfig = {
   providers:[],
@@ -22,7 +16,9 @@ export const authConfig = {
         if (isLoggedIn) return true;
         return false;
       } else if (isLoggedIn) {
-        return redirect(`${request.nextUrl.href}/dashboard`);
+
+        return (`${request.nextUrl.href}/dashboard`);
+
         // console.log(request.nextUrl.href)
         // return Response.redirect(new URL("/dashboard", request.nextUrl));
         // return Response.redirect(new URL("/dashboard", request.nextUrl));
