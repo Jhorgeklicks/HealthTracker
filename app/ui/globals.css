@@ -1,0 +1,123 @@
+:root {
+  --bg: #151c2c;
+  --bgSoft: #182237;
+  --text: white;
+  --textSoft: #b7bac1;
+
+  /* New Selects */
+  --grayBg : #f3f3f3;
+  --shadow:1px 1px 1px rgba(0,0,0,.249);
+  --main: #00684A;
+  --mainDark: #00A35C;
+  --shadowLight:1px 1px 3px rgba(255,255,255,0.8);
+  --danger: #cf2e2e;
+  --chartsGreen1: #12824d;
+  --mainDeepLight : #02343069;
+  --stripe: #e8edeb;
+
+  /* new shades */
+  --black: #000000;
+  --gray: #abb8c3;
+  --light: #ffffff;
+  --pale-pink: #f78da7;
+  --warningHard: #ff6900;
+  --warning: #fcb900;
+  --mainSoft: #7bdcb5;
+  --mainLight: #00d084;
+  --loaderBg: #00000054;;
+
+  --chartsBlue1: #b5d5ff;
+  --chartsBlue2: #016ee9;
+  --chartsOrange1: #d83713;
+  --lgCodeLightGreenString: #35de7b;
+  --lgCodeLightBlue: #2dc4ff;
+  --lgCodeLightOrangeVariable: #ff6f44;
+  --gray: #889397;
+  --grayDark1: #5C6C75;
+  --grayDark2: #3D4F58;
+  --grayDark3: #1C2D38;
+  --grayDark4: #112733;
+  --grayLight1: #C1C7C6;
+  --grayLight2: #E8EDEB;
+  --grayLight3: #F9FBFA;
+  --green: #00ED64;
+  --textGreen : #08847a;
+ 
+  
+  --greenDark3: #023430;
+  --greenLight1: #71F6BA;
+  --greenLight2: #C0FAE6;
+  --greenLight3: #E3FCF7;
+  --white: #FFFFFF;
+  --black: #001E2B;
+  --purpleDark2: #5E0C9E;
+  --purpleDark3: #2D0B59;
+  --purple: #B45AF2;
+  --purpleLight2: #F1D4FD;
+  --purpleLight3: #F9EBFF;
+  --blueDark1: #1254B7;
+  --blueDark2: #083C90;
+  --blueDark3: #0C2657;
+  --blue: #016BF8;
+  --blueLight1: #0498EC;
+  --blueLight2: #C3E7FE;
+  --blueLight3: #E1F7FF;
+  --yellowDark2: #944F01;
+  --yellowDark3: #4C2100;
+  --yellow: #FFC010;
+  --yellowLight2: #FFEC9E;
+  --yellowLight3: #FEF7DB;
+  --redDark2: #970606;
+  --redDark3: #5B0000;
+  --red: #DB3030;
+  --redLight1: #FF6960;
+  --redLight2: #FFCDC7;
+  --redLight3: #FFEAE5;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+
+/* New Design */
+body {
+  background-color: var(--grayLight2);
+  color: var(--text);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+
+.sweet-loading{
+  position: absolute;
+  background: #00684A3B;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  gap: 35px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  left: 0;
+}
+
+.loader-text{
+  display: block;
+  font-style: italic;
+  font-size: 14px;
+  margin-bottom: 40px;
+  color : #7998d7;
+}
+
+.custom-legend{
+  color: red;
+  background: pink;
+}

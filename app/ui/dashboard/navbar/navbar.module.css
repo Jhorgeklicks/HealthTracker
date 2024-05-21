@@ -1,0 +1,296 @@
+/* old css */
+
+/* .container {
+  padding: 20px;
+  border-radius: 10px;
+  background-color: var(--bgSoft);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.title {
+  color: var(--textSoft);
+  font-weight: bold;
+  text-transform: capitalize;
+}
+
+.menu {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.search {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background-color: #2e374a;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.input {
+  background-color: transparent;
+  border: none;
+  color: var(--text);
+}
+
+.icons{
+  display: flex;
+  gap: 20px;
+}
+
+.searchForm{
+  width: 100%;
+  position: relative;
+}
+
+.searchIcon{
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  z-index: 1000;
+  color: #00d084;;
+  font-weight: 900;
+  width: 40px;
+  height: 100%;
+}
+
+.searchInput{
+  width: 100%;
+  height: 100%;
+  display: inline-block;
+  border-radius: 10px;
+  padding: 5px 15px 5px 5px;
+}
+
+.header{
+  color: black;
+  margin-bottom: 3px;
+}
+
+.inputSearch{
+  display: inline-block;
+  width: 400px;
+  padding: 10px;
+  background: #8080802b;
+  border-radius: 5px;
+  outline: none;
+  border: 1px solid transparent;
+}
+
+.hr{
+  display: inline-block;
+  width: 100%;
+  color: #80808070;
+}
+
+.userList{
+  display: block;
+  width: 100%;
+  background: #8080801a;
+  margin-top: 5px;
+  height: 50vh;
+}
+
+.ul{
+  width: 100%;
+  display: inline-block;
+  padding: 10px;
+  color: #00d084;
+  list-style: none;
+}
+
+.userListLink{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+  background: #fff;
+  width: 100%;
+  padding: 13px 10px;
+  cursor: pointer;
+  box-shadow: 1px 1px 1px rgba(0,0,0,0.105);
+}
+
+.userListLink:hover .pat_name{
+ font-weight: 600;
+}
+
+.noRecord{
+  width: 100%;
+  display: block;
+  background: #F66;
+  padding: 14px 0;
+  text-align: center;
+  color: #fff;
+}
+
+.noRecord{
+  width: 100%;
+  display: block;
+  background: var(--mainSoft);
+  padding: 14px 0;
+  text-align: center;
+  color: #fff;
+} */
+
+
+.container {
+  padding: 20px;
+  border-radius: 10px;
+  background-color: var(--light);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: var(--shadowLight);
+  border: 1px solid var(--grayLight1);
+}
+
+
+
+.title {
+  color: var(--chartsGreen1);
+  font-weight: bold;
+  text-transform: capitalize;
+}
+
+.menu {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.search {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  border-radius: 10px;
+  background: var(--grayBg);
+  border: .1px solid var(--main);
+}
+
+.input {
+  background-color: transparent;
+  border: none;
+  color: var(--text);
+}
+
+.icons{
+  display: flex;
+  gap: 20px;
+}
+
+.searchForm{
+  width: 100%;
+  position: relative;
+}
+
+.searchIcon{
+  position: absolute;
+  top: 4px;
+  right: 0px;
+  z-index: 1000;
+  color: var(--warning);
+  font-weight: 900;
+  width: 26px;
+  height: 20PX;
+}
+
+.searchInput{
+  width: 100%;
+  height: 100%;
+  display: inline-block;
+  border-radius: 10px;
+  padding: 5px 15px 5px 5px;
+  box-shadow: var(--shadow);
+  border: none;
+
+}
+
+.header{
+  color: black;
+  margin-bottom: 3px;
+}
+
+.inputSearch{
+  display: inline-block;
+  width: 400px;
+  padding: 10px;
+  background: #8080802b;
+  border-radius: 5px;
+  outline: none;
+  border: 1px solid transparent;
+  color: var(--textGreen);
+  margin-top: 8px;
+}
+
+.inputSearch:focus{
+  border: 1px solid var(--textGreen);
+}
+
+.fetching{
+  width: 100%;
+  padding:0 20px;
+  background: var(--light);
+  color: var(--textGreen);
+  font-weight: 400;
+}
+
+.hr{
+  display: inline-block;
+  width: 100%;
+  color: #80808070;
+}
+
+.userList{
+  display: block;
+  width: 100%;
+  background: #8080801a;
+  margin-top: 5px;
+  height: 50vh;
+}
+
+.ul{
+  width: 100%;
+  display: inline-block;
+  padding: 10px;
+  color: #00d084;
+  list-style: none;
+}
+
+.userListLink{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+  background: #fff;
+  width: 100%;
+  padding: 13px 10px;
+  cursor: pointer;
+  box-shadow: 1px 1px 1px rgba(0,0,0,0.105);
+}
+
+.userListLink:hover .pat_name{
+ font-weight: 600;
+}
+
+.noRecord{
+  width: 100%;
+  display: block;
+  background: #F66;
+  padding: 14px 0;
+  text-align: center;
+  color: #fff;
+}
+
+.noRecord{
+  width: 100%;
+  display: block;
+  background: var(--mainLight);
+  padding: 14px 0;
+  text-align: center;
+  color: #fff;
+}

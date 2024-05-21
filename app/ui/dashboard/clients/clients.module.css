@@ -1,0 +1,186 @@
+/* .container{
+    background-color: var(--main);
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 20px;
+    min-height: 70vh;
+  }
+  
+  .top{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+  }
+  
+  .addButton{
+    padding: 10px;
+    background-color: var(--warning);
+    color: var(--light);
+    border: 1px solid transparent;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+ 
+  .addButton:hover{
+    color: var(--main);
+    border: 1px solid var(--light);
+  }
+  
+  .table{
+    width: 100%;
+  }
+  
+  .table td{
+    padding: 10px;
+  }
+  
+  .user{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .userImage{
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  
+  .buttons{
+    display: flex;
+    gap: 10px;
+  }
+  
+  .button{
+    padding: 5px 10px;
+    border-radius: 5px;
+    color: var(--text);
+    border: none;
+    cursor: pointer;
+  }
+  
+  .stripe{
+    background-color: #afd6ee12;
+  }
+
+  .view{
+    background-color: var(--light);
+    color: var(--greenDark3)
+  }
+ 
+.view:hover{
+    background-color: var(--warning);
+    color: var(--light)
+  }
+  
+  .delete{
+    background-color: var(--danger);
+  } */
+
+
+  .container{
+    background-color: var(--light);
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 20px;
+    min-height: 70vh;
+    box-shadow: var(--shadow);
+  }
+  
+  .top{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    background: #C1C7C629;
+    padding: 10px;
+  }
+  
+  .addButton{
+    padding: 10px;
+    background-color: var(--warning);
+    color: var(--light);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .table{
+    width: 100%;
+    color: var(--grayDark1);
+    font-weight: 400;
+    background: var(--grayLight2);
+  }
+  
+  .thead{
+    background: var(--main);
+    text-align: center;
+    font-weight: 500;
+    color: var(--light);
+  }
+  
+  .table td{
+    padding: 10px;
+  }
+  
+  .user{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .userImage{
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  
+  .buttons{
+    display: flex;
+    gap: 10px;
+  }
+  
+  .button{
+    padding: 10px 20px;
+    border-radius: 5px;
+    color: var(--text);
+    border: none;
+    cursor: pointer;
+  }
+  
+  .stripe{
+    background: var(--light);
+  }
+  
+  
+  .view{
+    color: var(--light);
+    background: var(--chartsGreen1);
+  }
+
+  .view{
+    background-color: var(--light);
+    color: var(--greenDark3)
+  }
+ 
+.view:hover{
+    background-color: var(--warning);
+    color: var(--light)
+  }
+
+  .addButton{
+    padding: 10px;
+    background-color: var(--warning);
+    color: var(--light);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  .addButton:hover{
+    color: var(--main);
+    border: 1px solid var(--light);
+  }
+  
+  .delete{
+    background-color: crimson;
+  }

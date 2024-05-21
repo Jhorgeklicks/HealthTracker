@@ -1,0 +1,132 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 40px;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.pageTitle {
+  max-width: 700px;
+  color: var(--main);
+  text-transform: uppercase;
+  font-weight: 600;
+  background: var(--light);
+  width: 100%;
+  text-align: center;
+  padding: 12px;
+  box-shadow: var(--shadow);
+  margin: 0 auto 20px auto;
+  font-size: 18px;
+  letter-spacing: 1.3px;
+}
+
+
+.form {
+  width: 700px;
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  background: var(--light);
+  box-shadow: var(--shadow);
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.msg {
+  display: block;
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 20px;
+  background: var(--danger);
+  color: var(--light);
+  width: 100%;
+  padding: 14px;
+  text-transform: capitalize;
+}
+.options {
+  display: flex;
+  gap: 15px;
+  flex-direction: column;
+}
+
+.group {
+  width: 100%;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  border-radius: 4px;
+  background: var(--grayBg);
+  box-shadow: var(--shadow);
+  color: var(--main);
+}
+
+.radio {
+  display: inline-block;
+  margin: 0 4px;
+  width: 22px;
+  height: 22px;
+  accent-color: var(--main);
+}
+.option {
+  display: flex;
+  font-size: 14px;
+  color: #08847a;
+}
+
+.label {
+  font-weight: 600;
+  font-size: 15px;
+  margin-right: 4px;
+  text-transform: capitalize;
+  color: var(--grayDark1);
+}
+
+.required {
+  color: rgb(241, 40, 40);
+}
+
+.input {
+  display: inline-block;
+  width: 98%;
+  padding: 8px 7px;
+  border-radius: 4px;
+  border: 1px solid transparent;
+  outline: none;
+}
+
+.radios {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 7px 0px;
+}
+
+.btnBox {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form button {
+  width: max-content;
+  padding: 15px 20px;
+  color: var(--text);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  margin: 20px auto 0 auto;
+  background: var(--main);
+}
+
+.form button:hover {
+  background: var(--mainLight);
+  transition: 0.2s ease-in;
+}
+
+

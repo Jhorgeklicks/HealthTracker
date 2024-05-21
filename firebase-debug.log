@@ -1,0 +1,135 @@
+[debug] [2024-05-21T11:25:33.093Z] ----------------------------------------------------------------------
+[debug] [2024-05-21T11:25:33.097Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\klick\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2024-05-21T11:25:33.098Z] CLI Version:   13.9.0
+[debug] [2024-05-21T11:25:33.098Z] Platform:      win32
+[debug] [2024-05-21T11:25:33.099Z] Node Version:  v20.11.0
+[debug] [2024-05-21T11:25:33.099Z] Time:          Tue May 21 2024 04:25:33 GMT-0700 (Pacific Daylight Time)
+[debug] [2024-05-21T11:25:33.099Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2024-05-21T11:25:33.210Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2024-05-21T11:25:33.210Z] > authorizing via signed-in user (klicksnet@gmail.com)
+[debug] [2024-05-21T11:25:33.210Z] [iam] checking project healthtracker-df5f6 for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2024-05-21T11:25:33.213Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/healthtracker-df5f6:testIamPermissions [none]
+[debug] [2024-05-21T11:25:33.213Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/healthtracker-df5f6:testIamPermissions x-goog-quota-user=projects/healthtracker-df5f6
+[debug] [2024-05-21T11:25:33.214Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/healthtracker-df5f6:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2024-05-21T11:25:34.690Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/healthtracker-df5f6:testIamPermissions 200
+[debug] [2024-05-21T11:25:34.690Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/healthtracker-df5f6:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2024-05-21T11:25:34.691Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/healthtracker-df5f6 [none]
+[debug] [2024-05-21T11:25:35.203Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/healthtracker-df5f6 200
+[debug] [2024-05-21T11:25:35.204Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/healthtracker-df5f6 {"projectId":"healthtracker-df5f6","projectNumber":"549109073962","displayName":"HealthTracker","name":"projects/healthtracker-df5f6","resources":{"hostingSite":"healthtracker-df5f6"},"state":"ACTIVE","etag":"1_97e1416e-8088-41de-b6f4-797c4cff4cfb"}
+[info] 
+   Thank you for trying our early preview of Next.js support on Firebase Hosting.
+   During the preview, support is best-effort and breaking changes can be expected. Proceed with caution.
+
+   Documentation: https://firebase.google.com/docs/hosting/frameworks/nextjs
+   File a bug: https://github.com/firebase/firebase-tools/issues/new?template=bug_report.md
+   Submit a feature request: https://github.com/firebase/firebase-tools/issues/new?template=feature_request.md
+
+   We'd love to learn from you. Express your interest in helping us shape the future of Firebase Hosting: https://goo.gle/41enW5X
+
+[debug] [2024-05-21T11:25:52.166Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/healthtracker-df5f6/sites/healthtracker-df5f6 [none]
+[debug] [2024-05-21T11:25:53.839Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/healthtracker-df5f6/sites/healthtracker-df5f6 200
+[debug] [2024-05-21T11:25:53.839Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/healthtracker-df5f6/sites/healthtracker-df5f6 {"name":"projects/healthtracker-df5f6/sites/healthtracker-df5f6","defaultUrl":"https://healthtracker-df5f6.web.app","type":"DEFAULT_SITE"}
+[info]    ▲ Next.js 14.0.1
+
+[info]    - Environments: .env
+
+   Creating an optimized production build ...
+
+[info]  ✓ Compiled successfully
+
+[info]    Linting and checking validity of types ...
+
+[info] 
+./app/ui/dashboard/clients/healthDataQuestions/HealthQtnForm.jsx
+73:43  Warning: 'index' is defined but never used.  no-unused-vars
+
+info  - Need to disable some ESLint rules? Learn more here: https://nextjs.org/docs/basic-features/eslint#disabling-rules
+
+[info]    Collecting page data ...
+
+[info]    Generating static pages (0/14) ...
+
+[info]    Generating static pages (3/14) 
+
+[info]    Generating static pages (6/14) 
+
+[info]    Generating static pages (10/14) 
+
+[info]  ✓ Generating static pages (14/14) 
+
+[info]    Finalizing page optimization ...
+
+[info]    Collecting build traces ...
+
+[info] 
+
+[info] Route (app)                                    Size     First Load JS
+┌ λ /                                          250 B          93.1 kB
+├ ○ /_not-found                                0 B                0 B
+├ λ /api/patients/[name]                       0 B                0 B
+├ ○ /api/staff                                 0 B                0 B
+├ λ /api/url                                   0 B                0 B
+├ λ /dashboard                                 109 kB          200 kB
+├ λ /dashboard/clients                         2.83 kB        96.1 kB
+├ λ /dashboard/clients/[id]                    140 B          89.1 kB
+├ λ /dashboard/clients/[id]/[health_id]        3.84 kB        89.7 kB
+├ λ /dashboard/clients/add                     3.19 kB          89 kB
+├ λ /dashboard/clients/data/[slug]             3.68 kB        96.5 kB
+├ λ /dashboard/clients/delete                  1.07 kB        86.9 kB
+├ λ /dashboard/clients/new/[id]                140 B          89.1 kB
+├ λ /dashboard/clients/update/healthData/[id]  1.68 kB        87.5 kB
+├ λ /dashboard/clients/update/info/[id]        1.79 kB        87.6 kB
+├ λ /dashboard/clients/update/qtns/[id]        1.95 kB        87.8 kB
+├ λ /dashboard/mailtest                        139 B            86 kB
+├ λ /dashboard/users                           2.68 kB          96 kB
+├ λ /dashboard/users/[id]                      2.9 kB         88.7 kB
+├ λ /dashboard/users/add                       3.31 kB        89.1 kB
+└ ○ /login                                     1.54 kB        92.9 kB
++ First Load JS shared by all                  85.8 kB
+  ├ chunks/472-7d4cee2dfb62b830.js             30.1 kB
+  ├ chunks/fd9d1056-901bacd484ce7dda.js        53.3 kB
+  ├ chunks/main-app-31fcab2a414092ab.js        235 B
+  └ chunks/webpack-0a69d01abd07ccec.js         2.16 kB
+
+
+ƒ Middleware                                   112 kB
+
+[info] 
+○  (Static)   prerendered as static HTML
+λ  (Dynamic)  server-rendered on demand using Node.js
+
+
+[info] Building a Cloud Function to run this application. This is needed due to:
+[info]  • middleware
+[info]  • Image Optimization
+[info]  • non-static component /page
+[info]  • non-static component /api/patients/[name]/route
+[info]  • non-static component /api/url/route
+[debug] [2024-05-21T11:26:51.230Z]  • non-static component /dashboard/clients/[id]/page
+[debug] [2024-05-21T11:26:51.230Z]  • non-static component /dashboard/clients/[id]/[health_id]/page
+[debug] [2024-05-21T11:26:51.230Z]  • non-static component /dashboard/clients/add/page
+[debug] [2024-05-21T11:26:51.230Z]  • non-static component /dashboard/clients/data/[slug]/page
+[debug] [2024-05-21T11:26:51.230Z]  • non-static component /dashboard/clients/delete/page
+[debug] [2024-05-21T11:26:51.230Z]  • non-static component /dashboard/clients/new/[id]/page
+[debug] [2024-05-21T11:26:51.230Z]  • non-static component /dashboard/clients/page
+[debug] [2024-05-21T11:26:51.230Z]  • non-static component /dashboard/clients/update/healthData/[id]/page
+[debug] [2024-05-21T11:26:51.230Z]  • non-static component /dashboard/clients/update/info/[id]/page
+[debug] [2024-05-21T11:26:51.230Z]  • non-static component /dashboard/clients/update/qtns/[id]/page
+[debug] [2024-05-21T11:26:51.230Z]  • non-static component /dashboard/mailtest/page
+[debug] [2024-05-21T11:26:51.230Z]  • non-static component /dashboard/users/[id]/page
+[debug] [2024-05-21T11:26:51.230Z]  • non-static component /dashboard/users/add/page
+[debug] [2024-05-21T11:26:51.230Z]  • non-static component /dashboard/users/page
+[debug] [2024-05-21T11:26:51.231Z]  • non-static component /dashboard/page
+[debug] [2024-05-21T11:26:51.231Z]  • route with server action /login
+[debug] [2024-05-21T11:26:51.231Z]  • route with server action /dashboard/users/add
+[info]  • and 17 other reasons, use --debug to see more
+[info] 
+[debug] [2024-05-21T11:26:54.045Z] skipping /login due to it matching an unsupported rewrite/redirect/header or middlware
+[debug] [2024-05-21T11:26:54.046Z] skipping /404 due to it matching an unsupported rewrite/redirect/header or middlware
+[debug] [2024-05-21T11:27:03.772Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/healthtracker-df5f6/sites/healthtracker-df5f6 [none]
+[debug] [2024-05-21T11:27:05.572Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/healthtracker-df5f6/sites/healthtracker-df5f6 200
+[debug] [2024-05-21T11:27:05.572Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/healthtracker-df5f6/sites/healthtracker-df5f6 {"name":"projects/healthtracker-df5f6/sites/healthtracker-df5f6","defaultUrl":"https://healthtracker-df5f6.web.app","type":"DEFAULT_SITE"}
+[debug] [2024-05-21T11:27:06.266Z] Error: ENOENT: no such file or directory, lstat 'D:\Development\NextJs\HealthTracker\.next\D:\Development\NextJs\HealthTracker\.next\app-build-manifest.json'
+[error] 
+[error] Error: An unexpected error has occurred.

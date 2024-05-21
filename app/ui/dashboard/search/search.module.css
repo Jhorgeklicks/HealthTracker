@@ -1,0 +1,22 @@
+.container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background-color: var(--light);
+  padding: 10px;
+  border-radius: 10px;
+  width: max-content;
+  box-shadow: var(--shadow);
+  border: 1px solid var(--mainSoft);
+}
+
+.icon{
+  color: var(--warning);
+}
+
+.input {
+  background-color: transparent;
+  border: none;
+  color: var(--main);
+  outline: none;
+}
