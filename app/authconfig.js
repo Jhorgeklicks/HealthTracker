@@ -1,26 +1,39 @@
+// import { getPageURL } from "./dashboard/users/add/page";
+
+import { redirect } from "next/navigation";
+
+// const url = await getPageURL();
+
+// console.log(url);
+
 export const authConfig = {
   providers:[],
   pages: {
     signIn: "/login",
   },
   callbacks: {
-    authorized({ auth, request }) {
+     authorized({ auth, request }) {
+
       const isLoggedIn = auth?.user;
       const isOnDashboard = request.nextUrl.pathname.startsWith("/dashboard");
-      // old
-      // if (isOnDashboard) {
-      //   if (isLoggedIn) return true;
-      //   return false;
-      // } else if (isLoggedIn) {
-      //   return Response.redirect(new URL("/dashboard", request.nextUrl));
-      // }
 
+      // old
       if (isOnDashboard) {
         if (isLoggedIn) return true;
         return false;
       } else if (isLoggedIn) {
-        return "/dashboard"; 
+        return redirect(`${request.nextUrl.href}/dashboard`);
+        // console.log(request.nextUrl.href)
+        // return Response.redirect(new URL("/dashboard", request.nextUrl));
+        // return Response.redirect(new URL("/dashboard", request.nextUrl));
       }
+
+      // if (isOnDashboard) {
+      //   if (isLoggedIn) return true;
+      //   return false;
+      // } else if (isLoggedIn) {
+      //   return "/dashboard"; 
+      // }
     
       return true;
     },

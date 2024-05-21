@@ -5,7 +5,7 @@ import Loader from "@/app/ui/dashboard/loader/Loader";
 import styles from "@/app/ui/dashboard/users/addUser/addUser.module.css";
 import { useState } from "react";
 
-const getURL = async () => {
+export const getPageURL = async () => {
   const url = await fetch(`http://localhost:3000/api/url`);
   const url_link = await url.json();
   return url_link.url;
@@ -17,7 +17,7 @@ const AddUserPage = () => {
   
   const handleSubmit = async (e) => {
     e.preventDefault(); 
-    const link = await getURL();
+    const link = await getPageURL();
 
     setLoading(true); 
 
