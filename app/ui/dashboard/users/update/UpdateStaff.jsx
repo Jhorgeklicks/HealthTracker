@@ -4,7 +4,7 @@ import { useState } from "react";
 import Loader from "../../loader/Loader";
 
 const getURL = async () => {
-  const url = await fetch(`http://localhost:3000/api/url`);
+  const url = fetch(`${process.env.BASE_URL}/api/url`);
   const url_link = await url.json();
   return url_link.url;
 }
