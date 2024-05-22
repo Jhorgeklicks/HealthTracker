@@ -6,7 +6,8 @@ import styles from "@/app/ui/dashboard/users/addUser/addUser.module.css";
 import { useState } from "react";
 
 export const getPageURL = async () => {
-  const url = await fetch(`http://localhost:3000/api/url`);
+  // const url = await fetch(`http://localhost:3000/api/url`);
+  const url = fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/api/url`);
   const url_link = await url.json();
   return url_link.url;
 }
