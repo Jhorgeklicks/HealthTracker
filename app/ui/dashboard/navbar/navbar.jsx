@@ -27,7 +27,7 @@ const Navbar = () => {
   const fetchPatients = async (name) => {
     if(name.length > 2){
       setLoading(true)
-      const res = await fetch(`http://localhost:3000/api/patients/${name}`);
+      const res = await fetch(`${process.env.NEXT_PUBLIC_VERCEL_URL}/api/patients/${name}`);
       const data = await res.json();
       setLoading(false);
       setClients(data.allStaff)

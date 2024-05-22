@@ -7,8 +7,8 @@ export const WelcomeTemplate = (name, password, status, link) => {
 // let link = headersList.get('host'); 
 // link = `${link}/login`;
 // const encodedUrl = encodeURIComponent(link);
-
-link == " " ? process.env.BASE_URL : link;
+ 
+link == " " ? process.env.NEXT_PUBLIC_VERCEL_URL : 'https://health-tracker-cyan.vercel.app';
 
   let data = `<!DOCTYPE html>
 <html xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office" lang="en">
