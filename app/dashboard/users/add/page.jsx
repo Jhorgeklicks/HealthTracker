@@ -1,13 +1,15 @@
 "use client"
+
 import { addFacility } from "@/app/lib/actions";
 import Loader from "@/app/ui/dashboard/loader/Loader";
 import styles from "@/app/ui/dashboard/users/addUser/addUser.module.css";
 import { useState } from "react";
 
-export const getPageURL = async () => {
-  // const url = await fetch(`http://localhost:3000/api/url`);
-  const url = fetch(`${process.env.BASE_URL}/api/url`);
+const getPageURL = async () => {
+  const link = process.env.BASE_URL;
+  const url = fetch(`${link}/api/url`);
   const url_link = await url.json();
+  console.log(link, url);
   return url_link.url;
 }
 
