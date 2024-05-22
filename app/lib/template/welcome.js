@@ -8,6 +8,8 @@ export const WelcomeTemplate = (name, password, status, link) => {
 // link = `${link}/login`;
 // const encodedUrl = encodeURIComponent(link);
 
+link == " " ? process.env.BASE_URL : link;
+
   let data = `<!DOCTYPE html>
 <html xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office" lang="en">
 

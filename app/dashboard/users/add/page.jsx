@@ -5,13 +5,13 @@ import Loader from "@/app/ui/dashboard/loader/Loader";
 import styles from "@/app/ui/dashboard/users/addUser/addUser.module.css";
 import { useState } from "react";
 
-const getPageURL = async () => {
-  const link = process.env.BASE_URL;
-  const url = fetch(`${link}/api/url`);
-  const url_link = await url.json();
-  console.log(link, url);
-  return url_link.url;
-}
+// const getPageURL = async () => {
+//   const link = process.env.BASE_URL;
+//   const url = fetch(`${link}/api/url`);
+//   const url_link = await url.json();
+//   console.log(link, url);
+//   return url_link.url;
+// }
 
 const AddUserPage = () => {
   // {/* name, location,district, gps,isAdmin,phone,password, address */}
@@ -19,14 +19,14 @@ const AddUserPage = () => {
   
   const handleSubmit = async (e) => {
     e.preventDefault(); 
-    const link = await getPageURL();
+    // const link = await getPageURL();
 
     setLoading(true); 
 
     try {
       // Extract form data:
       const formData = new FormData(e.target); 
-      formData.append('link', link); 
+      formData.append('link', ''); 
 
       // Update facility using provided function:
       await addFacility(formData); 
