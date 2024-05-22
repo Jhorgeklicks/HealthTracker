@@ -1,13 +1,5 @@
 
-// import { headers } from 'next/headers';
-
 export const WelcomeTemplate = (name, password, status, link = process.env.NEXT_PUBLIC_VERCEL_URL ) => {
-
-// const headersList = headers();
-// let link = headersList.get('host'); 
-// link = `${link}/login`;
-// const encodedUrl = encodeURIComponent(link);
- 
 
   let data = `<!DOCTYPE html>
 <html xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office" lang="en">

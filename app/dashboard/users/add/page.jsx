@@ -12,7 +12,7 @@ import { useState } from "react";
 //   console.log(link, url);
 //   return url_link.url;
 // }
-
+const base_url = process.env.NEXT_PUBLIC_VERCEL_URL; 
 const AddUserPage = () => {
   // {/* name, location,district, gps,isAdmin,phone,password, address */}
   const [loading, setLoading] = useState(false);
@@ -26,7 +26,7 @@ const AddUserPage = () => {
     try {
       // Extract form data:
       const formData = new FormData(e.target); 
-      formData.append('link', ''); 
+      formData.append('link', base_url); 
 
       // Update facility using provided function:
       await addFacility(formData); 

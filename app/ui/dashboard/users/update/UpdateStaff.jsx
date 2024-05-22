@@ -11,6 +11,7 @@ import Loader from "../../loader/Loader";
 //   return url_link.url;
 // }
 
+const base_url = process.env.NEXT_PUBLIC_VERCEL_URL; 
 const UpdateClient = ({ facility, updateFacility }) => {
   const [loading, setLoading] = useState(false);
 
@@ -24,7 +25,7 @@ const UpdateClient = ({ facility, updateFacility }) => {
     try {
       // Extract form data:
       const formData = new FormData(e.target); 
-      formData.append('link', ""); 
+      formData.append('link', base_url); 
 
       // Update facility using provided function:
       await updateFacility(formData); 
