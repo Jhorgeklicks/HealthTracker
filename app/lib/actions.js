@@ -362,15 +362,19 @@ export  async function deletePatientAndRelatedRecords(id) {
 //   revalidatePath("/dashboard/products");
 // };
 
-export const authenticate = async (prevState, formData) => {
-  const { name, password } = Object.fromEntries(formData);
+export const authenticate = async (data) => {
+
+  console.log(data)
+  const { name, password } = data;
+  // const { name, password } = Object.fromEntries(formData);
 
   // console.log(name, password );
   try {
     await signIn("credentials", { name, password });
+    return true;
   } catch (err) {
     if (err.message.includes("CredentialsSignin")) {
-      return "Wrong Credentials";
+      return {"status":"failed","msg":"Wrong Credentials"};
     }
     throw err;
   }
