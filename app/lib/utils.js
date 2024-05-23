@@ -12,3 +12,15 @@ export const connectToDB = async () => {
     throw new Error(error);
   }
 };
+
+
+export const makeSlug = (text) => {
+  return text
+    .toLowerCase() // Convert to lowercase
+    .replace(/\s+/g, "-") // Replace spaces with hyphens
+    .replace(/[^a-z0-9-]/g, ""); // Remove non-alphanumeric characters and hyphens
+}
+
+export const capitalizeWords =(str) => {
+  return str.replace(/(^|\s)\w/g, match => match.toUpperCase());
+}

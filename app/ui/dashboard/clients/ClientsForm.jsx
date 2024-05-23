@@ -1,8 +1,9 @@
 "use client"
  
 import { useState } from "react";
-import styles from "./clientsForm.module.css";
 import Loader from "../loader/Loader";
+import { capitalizeWords, makeSlug } from "@/app/lib/utils";
+import styles from "./clientsForm.module.css";
 
 const ClientsForm = ({staff,addPatient}) => {
   // console.log(staff)
@@ -27,15 +28,15 @@ const ClientsForm = ({staff,addPatient}) => {
       setError(null)
       setLoading(true)
       const data = {
-        firstName: firstName.value,
-        lastName: lastName.value,
-        middleName: middleName.value == "" ? null : middleName.value,
+        firstName: capitalizeWords(firstName.value),
+        lastName: capitalizeWords(lastName.value),
+        middleName: middleName.value == "" ? null : capitalizeWords(middleName.value),
         phone: phone.value == "" ? null : phone.value,
-        gender: gender.value,
+        gender: capitalizeWords(gender.value),
         age: age.value * 1,
         maritalStatus: maritalStatus.value,
-        education: education.value,
-        slug: `${firstName.value.trim().toLowerCase()+'-'}${middleName.value ? middleName.value.trim().toLowerCase()+'-' : ''}${lastName.value.trim().toLowerCase()}`,
+        education: capitalizeWords(education.value),
+        slug: `${firstName.value.trim().toLowerCase()+'-'}${middleName.value ? makeSlug(middleName.value.trim().toLowerCase())+'-' : ''}${lastName.value.trim().toLowerCase()}`,
         Officer : staff.id 
       }
 

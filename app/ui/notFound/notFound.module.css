@@ -5,6 +5,7 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    background: var(--mainSoft);
 }
 
 .title{
@@ -21,9 +22,12 @@
 .btnHome{
     display: inline-block;
     width: max-content;
-    padding: 15px 20px;
-    background: var(--bgSoft);
+    padding: 15px 40px;
+    background: var(--light);
     border-radius: 100px;
     cursor: pointer;
     border: 2px solid rgba(255,255,255,.027);
+    color: var(
+    --main);
+    font-weight: 600;
 }

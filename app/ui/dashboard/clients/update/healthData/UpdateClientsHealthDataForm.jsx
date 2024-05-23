@@ -1,11 +1,13 @@
 "use client";
 import { useState } from "react";
 import styles from "./updateClientHealthDataForm.module.css";
+import Loader from "../../../loader/Loader";
 
 const UpdateClientsHealthDataForm = ({id,staff, healthData, updateHealthData}) => {
   // addPatientHealthData
 // console.log(healthData.PatientId._id)
-  const [error, setError] = useState(null);
+  const [error, setError]  = useState(null);
+  const [loading, setLoading]  = useState(false);
 
   const onlyNumbersOrFloats = (num) =>  {
     if (typeof num === 'number' && !isNaN(num)) {
@@ -16,8 +18,10 @@ const UpdateClientsHealthDataForm = ({id,staff, healthData, updateHealthData}) =
   }
 
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async(e) => {
     e.preventDefault();
+
+    setLoading(true);
 
     // if staff didn't add this record, restrict him from updating it!
     if(staff !== healthData.staffId) return alert("You don't have permission To Update this record!");
@@ -49,64 +53,73 @@ const UpdateClientsHealthDataForm = ({id,staff, healthData, updateHealthData}) =
         rbs         : rbs.value         === '' ? healthData?.rbs : rbs.value,
         fbs         : fbs.value         === '' ? healthData?.fbs : fbs.value
       };
-      updateHealthData(id, healthData.PatientId._id, data, healthData.PatientId.slug);
+
+      
+
+      try {
+        const result =await updateHealthData(id, healthData.PatientId._id, data, healthData.PatientId.slug);
+        setLoading(false);
+  
+        if(result !== undefined && result.status === 'failed') {
+          setError(result.msg);
+        }else{
+          setError(null)
+        }
+      } catch (err) {
+        console.error("Login error:", err);
+        setError({ status: "failed", msg: err.message || "An error occurred" }); // Set error message
+      } finally {
+        setLoading(false); // Set loader to false regardless of success/failure
+      }
     
     }
   };
 
-  setTimeout( () => {
-    setError(null)
-  },2000);
-
   return (
     <div className={styles.container}>
-      {/* <div className={styles.msg}>{error && error}</div> */}
-      {
-        error ? (<div className={styles.msg}>{error ? error : "Update User Health"}</div>):
-        (<p className={styles.pageTitle}>Update Patient Health Data.</p>)
-      }
 
-      <form action="" name="clientForm" className={styles.form}>
+      {error !== null && error ? <div className={styles.error}>{error}</div> : <div className={styles.pageTitle}>Update Patient Health Data.</div>}
+      { loading && < Loader text={''}/>}
+
+      <form name="clientForm" className={styles.form} onSubmit={handleSubmit}>
           <div className={styles.group}>
             <label className={styles.label}>Update Height<span className={styles.required}>*</span></label>
-            <input type="number" className={styles.input} name="height" placeholder={healthData?.height} required/>
+            <input type="text" accept="decimal" className={styles.input} name="height" placeholder={healthData?.height} autoComplete="off"/>
           </div>
 
           <div className={styles.group}>
             <label className={styles.label}>Update Weight1<span className={styles.required}>*</span></label>
-            <input type="number" className={styles.input} name="weight" placeholder={healthData?.weight} required/>
+            <input type="text" accept="decimal" className={styles.input} name="weight" placeholder={healthData?.weight} autoComplete="off"/>
           </div>
  
           <div className={styles.group}>
             <label className={styles.label}>Update BMI<span className={styles.required}>*</span></label>
-            <input type="number" className={styles.input} name="bmi" placeholder={healthData?.bmi} required/>
+            <input type="text" accept="decimal" className={styles.input} name="bmi" placeholder={healthData?.bmi} autoComplete="off"/>
           </div>
       
           <div className={styles.group}>
             <label className={styles.label}>Update SystolicBp<span className={styles.required}>*</span></label>
-            <input type="number" className={styles.input} name="systolicBp" placeholder={healthData?.systolicBp} required/>
+            <input type="text" accept="decimal" className={styles.input} name="systolicBp" placeholder={healthData?.systolicBp} autoComplete="off"/>
           </div>
 
           <div className={styles.group}>
             <label className={styles.label}>Update DiastolicBp<span className={styles.required}>*</span></label>
-            <input type="number" className={styles.input} name="diastolicBp" placeholder={healthData?.diastolicBp} required/>
+            <input type="text" accept="decimal" className={styles.input} name="diastolicBp" placeholder={healthData?.diastolicBp} autoComplete="off"/>
           </div>
       
       
           <div className={styles.group}>
             <label className={styles.label}>Update FBS<span className={styles.required}>*</span></label>
-            <input type="number" className={styles.input} name="fbs" placeholder={healthData?.fbs}/>
+            <input type="text" accept="decimal" className={styles.input} name="fbs" placeholder={healthData?.fbs}/>
           </div>
 
           <div className={styles.group}>
             <label className={styles.label}>Update RBS<span className={styles.required}>*</span></label>
-            <input type="number" className={styles.input} name="rbs" placeholder={healthData?.rbs}/>
+            <input type="text" accept="decimal" className={styles.input} name="rbs" placeholder={healthData?.rbs}/>
           </div>
 
         <div className={styles.btnBox}>
-          <button type="submit" className={styles.btn} onClick={handleSubmit}>
-            Update Record
-          </button>
+          <button type="submit" className={styles.btn}>{loading ? 'Updating ...': "Update Data"}</button>
         </div>
       </form>
     </div>

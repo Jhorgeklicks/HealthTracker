@@ -97,7 +97,7 @@ a {
 
 .sweet-loading{
   position: absolute;
-  background: #00684A3B;
+  background: var(--mainSoft);
   width: 100%;
   height: 100%;
   display: flex;
@@ -112,9 +112,9 @@ a {
 .loader-text{
   display: block;
   font-style: italic;
-  font-size: 14px;
+  font-size: 16px;
   margin-bottom: 40px;
-  color : #7998d7;
+  color : var(--light);
 }
 
 .custom-legend{

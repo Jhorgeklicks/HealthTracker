@@ -5,6 +5,7 @@
   padding:20px 40px 15px 40px;
   justify-content: center;
   align-items: center;
+  position: relative;
 }
 
 .form {
@@ -42,7 +43,6 @@
 .label {
   font-weight: 500;
   font-size: 16px;
-  letter-spacing: 1px;
   margin-right: 4px;
   text-transform: capitalize;
 }

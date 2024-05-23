@@ -249,8 +249,12 @@ export const updateHealthData= async (id,patId,data,slug) => {
 
     await HealthData.findByIdAndUpdate(id, data);
   } catch (err) {
-    console.log(err);
-    throw new Error("Failed to update Patient!");
+    if(err.name == "CastError"){
+      return {"status":"failed","msg":`Invalid ${err.path} format. ${err.path} should be a number or a decimal (e.g., 22, 23.5).`};
+    }else{
+      return {"status":"failed","msg":`failed to update Health Data`};
+    }
+    // throw new Error("Failed to update Patient!");
   }
 
   redirect(`/dashboard/clients/data/${slug}-${patId}`);
@@ -271,8 +275,8 @@ export const updatePatientQuestionnaire= async (id,patId,data,slug) => {
   // console.log(data)
     await PatientQuestion.findByIdAndUpdate(id, data);
   } catch (err) {
-    console.log(err);
-    throw new Error("Failed to update Patient!");
+    // console.log(err);
+    return {"status":"failed","msg":`failed to update questionnaire`};
   }
 
   redirect(`/dashboard/clients/data/${slug}-${patId}`);
@@ -364,7 +368,6 @@ export  async function deletePatientAndRelatedRecords(id) {
 
 export const authenticate = async (data) => {
 
-  console.log(data)
   const { name, password } = data;
   // const { name, password } = Object.fromEntries(formData);
 

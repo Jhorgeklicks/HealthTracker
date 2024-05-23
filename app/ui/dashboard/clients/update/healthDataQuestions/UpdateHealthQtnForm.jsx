@@ -3,13 +3,16 @@
 import { useState } from "react";
 import styles from "./updateHealthQtnForm.module.css";
 import { healthQuestionnaire } from "@/app/questionnaire";
+import Loader from "../../../loader/Loader";
 
 // refs => staffId,PatientId,healthData
 const UpdateHealthQuestions = ({staff, id, questionnaire,updatePatientQuestionnaire}) => {
   const [error, setError] = useState(null);
+  const [loading, setLoading]  = useState(false);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    setLoading(true);
 
     if(staff !== questionnaire.staffId ) return alert("You don't have permission To Update this record!");
 
@@ -32,16 +35,33 @@ const UpdateHealthQuestions = ({staff, id, questionnaire,updatePatientQuestionna
         workStress:workStress.value
       };
 
-      updatePatientQuestionnaire(id,questionnaire.PatientId._id, data,questionnaire.PatientId.slug);
+     
+      try {
+        const result =await  updatePatientQuestionnaire(id,questionnaire.PatientId._id, data,questionnaire.PatientId.slug);
+
+        setLoading(false);
+  
+        if(result !== undefined && result.status === 'failed') {
+          setError(result.msg);
+        }else{
+          setError(null)
+        }
+      } catch (err) {
+        console.error("Login error:", err);
+        setError({ status: "failed", msg: err.message || "An error occurred" }); // Set error message
+      } finally {
+        setLoading(false); // Set loader to false regardless of success/failure
+      }
     
   };
 
   return (
     <div className={styles.container}>
-      <form action="" name="clientForm" className={styles.form}>
-        {
-          error && <div className={styles.msg}>{error && error}</div>
-        }
+      {error !== null && error ? <div className={styles.msg}>{error}</div> : <div className={styles.pageTitle}>Update Patient Questionnaire</div>}
+      { loading && < Loader text={''}/>}
+
+      <form action="" name="clientForm" className={styles.form} onSubmit={handleSubmit}>
+      
         {
           healthQuestionnaire.map( (qtns,index) => 
           <>
@@ -65,8 +85,8 @@ const UpdateHealthQuestions = ({staff, id, questionnaire,updatePatientQuestionna
         }
 
         <div className={styles.btnBox}>
-          <button type="submit" className={styles.btn} onClick={handleSubmit}>
-            Update Record
+          <button type="submit" className={styles.btn}>
+          {loading ? 'Updating ...': 'Update Questionnaire'}
           </button>
         </div>
       </form>
